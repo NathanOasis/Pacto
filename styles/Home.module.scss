@@ -1,0 +1,69 @@
+$primary-color: #543d3f;
+$second-color: #ff7556;
+$white-color: #fff;
+$text-color: #5a5a5a;
+$title-color: #a61b25;
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0 15px;
+  background-color: $white-color;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .menu {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+
+    &.menuActive {
+      .menuTop {
+        backface-visibility: hidden;
+        top: 0;
+        transform: rotate(50deg);
+        transition: 0.55s 0.5s;
+      }
+
+      .menuMiddle {
+        opacity: 0;
+      }
+
+      .menuBottom {
+        backface-visibility: hidden;
+        top: 0;
+        transform: rotate(-410deg);
+        transition: 0.55s 0.5s;
+      }
+    }
+
+    .menuBurger {
+      backface-visibility: hidden;
+      position: absolute;
+      left: 0;
+      border-top: 5px solid #864047;
+      width: 100%;
+      transition: 0.55s;
+      border-radius: 7px;
+    }
+
+    .menuTop {
+      top: 0;
+    }
+    .menuMiddle {
+      top: 8px;
+    }
+    .menuBottom {
+      top: -8px;
+    }
+  }
+}
