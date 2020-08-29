@@ -4,6 +4,18 @@ $white-color: #fff;
 $text-color: #5a5a5a;
 $title-color: #a61b25;
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -11,9 +23,7 @@ $title-color: #a61b25;
   background-color: $white-color;
 
   .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-space();
     height: 60px;
   }
 
@@ -64,6 +74,90 @@ $title-color: #a61b25;
     }
     .menuBottom {
       top: -8px;
+    }
+  }
+}
+
+.main {
+  .bannerTop {
+    padding-top: 60px;
+
+    a {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .containerAbout {
+    width: 90%;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -20px;
+    background-color: $primary-color;
+
+    // &:before,
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   background: $primary-color;
+    //   bottom: -34px;
+    //   height: 64px;
+    // }
+
+    // &:before {
+    //   left: 0;
+    //   width: 50%;
+    //   transform: skew(0deg, 15deg);
+    // }
+
+    // &:after {
+    //   right: 0;
+    //   width: 50%;
+    //   transform: skew(0deg, -15deg);
+    // }
+
+    .wrapper {
+      @include flex-center();
+      flex-direction: column;
+      padding: 40px 20px;
+
+      .title {
+        @include flex-center();
+
+        color: $white-color;
+        font-size: 28px;
+        font-style: italic;
+        margin-top: 15px;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background: #e2e2e2;
+          height: 4px;
+          width: 300px;
+          bottom: -30px;
+        }
+      }
+
+      .description {
+        color: $white-color;
+        font-style: initial;
+        display: block;
+        margin-top: 60px;
+      }
+
+      .button {
+        color: $second-color;
+        font-size: 18px;
+        width: 80%;
+        margin-top: 30px;
+      }
     }
   }
 }
