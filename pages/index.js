@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 
 import Banner from "../components/Banner";
 import Button from "../components/Button";
+import OurReferees from "../components/OurReferees";
 
 export default function Home() {
   const [menuBurger, setActiveMenuBurger] = useState(false);
@@ -59,13 +60,10 @@ export default function Home() {
             <Button text="Ver mais" className={styles.button} />
           </div>
         </div>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu
-        </span>
+
+        <div className={styles.containerReferees}>
+          <OurReferees />
+        </div>
       </main>
     </>
   );

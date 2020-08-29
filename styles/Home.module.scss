@@ -16,6 +16,12 @@ $title-color: #a61b25;
   justify-content: space-between;
 }
 
+@mixin container {
+  width: 90%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -93,9 +99,7 @@ $title-color: #a61b25;
   }
 
   .containerAbout {
-    width: 90%;
-    padding: 0 15px;
-    margin: 0 auto;
+    @include container;
     position: relative;
     margin-top: -20px;
     background-color: $primary-color;
@@ -159,5 +163,11 @@ $title-color: #a61b25;
         margin-top: 30px;
       }
     }
+  }
+
+  .containerReferees {
+    width: 100%;
+    // padding-left: 15px;
+    margin-top: 80px;
   }
 }
