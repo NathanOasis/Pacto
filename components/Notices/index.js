@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Referees.module.scss";
+import styles from "./Notices.module.scss";
 
 import Slider from "react-slick";
 
-function OurReferees() {
+function Notices() {
   var settings = {
     dots: false,
     // autoplay: true,
@@ -17,33 +17,42 @@ function OurReferees() {
   return (
     <Slider {...settings}>
       <div className={styles.box}>
-        <img src="arbitro1.jpg" alt="Árbitro nome completo" />
-        <span>Nome completo</span>
+        <img src="notice-image.png" alt="Notícia" />
+        <span>
+          <strong>12 Jun | </strong>Título da notícia
+        </span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor...
         </p>
+        <a href="#">Matéria completa</a>
       </div>
 
       <div className={styles.box}>
-        <img src="arbitro2.jpg" alt="Árbitro nome completo" />
-        <span>Nome completo</span>
+        <img src="notice-image.png" alt="Notícia" />
+        <span>
+          <strong>12 Jun | </strong>Título da notícia
+        </span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor...
         </p>
+        <a href="#">Matéria completa</a>
       </div>
 
       <div className={styles.box}>
-        <img src="arbitro3.jpg" alt="Árbitro nome completo" />
-        <span>Nome completo</span>
+        <img src="notice-image.png" alt="Notícia" />
+        <span>
+          <strong>12 Jun | </strong>Título da notícia
+        </span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor...
         </p>
+        <a href="#">Matéria completa</a>
       </div>
     </Slider>
   );
 }
 
-export default OurReferees;
+export default Notices;

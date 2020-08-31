@@ -7,6 +7,7 @@ import Banner from "../components/Banner";
 import Button from "../components/Button";
 import OurReferees from "../components/OurReferees";
 import Title from "../components/Title";
+import Notices from "../components/Notices";
 
 export default function Home() {
   return (
@@ -72,6 +73,12 @@ export default function Home() {
             <img src="notice-icon.svg" alt="Ícone de notícias" />
             <Title title="Notícias" />
           </div>
+
+          <div className={styles.wrapperNotices}>
+            <Notices />
+          </div>
+
+          <Button text="Ver todas" className={styles.buttonNotice} />
         </div>
       </main>
     </>

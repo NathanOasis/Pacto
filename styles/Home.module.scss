@@ -125,4 +125,34 @@
       margin: 30px auto 0;
     }
   }
+
+  .containerNotices {
+    margin-top: 60px;
+
+    .wrapperTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 30px;
+        margin-right: 20px;
+      }
+
+      span {
+        margin-top: 0;
+      }
+    }
+
+    .wrapperNotices {
+      margin-top: 40px;
+    }
+
+    .buttonNotice {
+      color: $second-color;
+      font-size: 18px;
+      width: 300px;
+      margin: 30px auto 0;
+    }
+  }
 }
