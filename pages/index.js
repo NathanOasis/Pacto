@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.scss";
 import NextHead from "../components/NextHead";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
+import BoxText from "../components/BoxText";
 import Button from "../components/Button";
 import OurReferees from "../components/OurReferees";
 import Title from "../components/Title";
@@ -21,22 +22,16 @@ export default function Home() {
           <Banner />
         </div>
 
-        <div className={styles.containerAbout}>
-          <div className={styles.wrapper}>
-            <img src="icon-about.svg" alt="Ícone quem somos" />
-            <span className={styles.title}>Quem somos</span>
-
-            <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu
-            </p>
-
-            <Button text="Ver mais" className={styles.button} />
-          </div>
-        </div>
+        <BoxText
+          className={styles.boxTextTop}
+          icon={<img src="icon-about.svg" alt="Ícone quem somos" />}
+          title="Quem Somos"
+          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu"
+        />
 
         <div className={styles.containerReferees}>
           <OurReferees />
@@ -79,6 +74,16 @@ export default function Home() {
           </div>
 
           <Button text="Ver todas" className={styles.buttonNotice} />
+
+          <BoxText
+            className={styles.boxTextBot}
+            title="Legislação sobre Câmara de Arbitragem"
+            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu"
+          />
         </div>
       </main>
     </>
