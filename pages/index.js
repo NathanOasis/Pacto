@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 
+import NextHead from "../components/NextHead";
 import Banner from "../components/Banner";
 import Button from "../components/Button";
 import OurReferees from "../components/OurReferees";
@@ -14,11 +14,7 @@ export default function Home() {
   }
   return (
     <>
-      <Head>
-        <title>Home - Pacto</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <NextHead title="Home - Pacto" />
       <header className={styles.header}>
         <div className={styles.wrapper}>
           <a href="/">
