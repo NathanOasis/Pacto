@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.title {
+  @include flex-center();
+
+  color: #a61b25;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 15px;
+}

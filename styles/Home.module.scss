@@ -1,88 +1,4 @@
-$primary-color: #543d3f;
-$second-color: #ff7556;
-$white-color: #fff;
-$text-color: #5a5a5a;
-$title-color: #a61b25;
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flex-space {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@mixin container {
-  width: 90%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.header {
-  position: fixed;
-  width: 100%;
-  padding: 0 15px;
-  background-color: $white-color;
-
-  .wrapper {
-    @include flex-space();
-    height: 60px;
-  }
-
-  .logo {
-    width: 120px;
-  }
-
-  .menu {
-    cursor: pointer;
-    position: relative;
-    width: 30px;
-
-    &.menuActive {
-      .menuTop {
-        backface-visibility: hidden;
-        top: 0;
-        transform: rotate(50deg);
-        transition: 0.55s 0.5s;
-      }
-
-      .menuMiddle {
-        opacity: 0;
-      }
-
-      .menuBottom {
-        backface-visibility: hidden;
-        top: 0;
-        transform: rotate(-410deg);
-        transition: 0.55s 0.5s;
-      }
-    }
-
-    .menuBurger {
-      backface-visibility: hidden;
-      position: absolute;
-      left: 0;
-      border-top: 5px solid #864047;
-      width: 100%;
-      transition: 0.55s;
-      border-radius: 7px;
-    }
-
-    .menuTop {
-      top: 0;
-    }
-    .menuMiddle {
-      top: 8px;
-    }
-    .menuBottom {
-      top: -8px;
-    }
-  }
-}
+@import "variables";
 
 .main {
   .bannerTop {
@@ -169,5 +85,44 @@ $title-color: #a61b25;
     width: 100%;
     // padding-left: 15px;
     margin-top: 80px;
+
+    .buttonReferees {
+      color: $second-color;
+      font-size: 18px;
+      width: 300px;
+      margin: 30px auto 0;
+    }
+  }
+
+  .containerActions {
+    @include container;
+    margin-top: 60px;
+    background: url("../public/bg-form-home.png");
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin-top: 40px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        label {
+          color: $text-color;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .buttonAction {
+      color: $second-color;
+      font-size: 18px;
+      width: 300px;
+      margin: 30px auto 0;
+    }
   }
 }

@@ -1,0 +1,63 @@
+@import '../../styles/variables';
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0 15px;
+  background-color: $white-color;
+
+  .wrapper {
+    @include flex-space();
+    height: 60px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .menu {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+
+    &.menuActive {
+      .menuTop {
+        backface-visibility: hidden;
+        top: 0;
+        transform: rotate(50deg);
+        transition: 0.55s 0.5s;
+      }
+
+      .menuMiddle {
+        opacity: 0;
+      }
+
+      .menuBottom {
+        backface-visibility: hidden;
+        top: 0;
+        transform: rotate(-410deg);
+        transition: 0.55s 0.5s;
+      }
+    }
+
+    .menuBurger {
+      backface-visibility: hidden;
+      position: absolute;
+      left: 0;
+      border-top: 5px solid #864047;
+      width: 100%;
+      transition: 0.55s;
+      border-radius: 7px;
+    }
+
+    .menuTop {
+      top: 0;
+    }
+    .menuMiddle {
+      top: 8px;
+    }
+    .menuBottom {
+      top: -8px;
+    }
+  }
+}
