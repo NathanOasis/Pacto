@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Title from "../components/Title";
 import Footer from "../components/Footer";
 
-export default function Actions() {
+export default function About() {
   return (
     <>
       <NextHead title="Sobre a Pacto" />
