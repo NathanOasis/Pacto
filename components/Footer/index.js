@@ -10,22 +10,22 @@ function Footer() {
           <ul>
             <li>
               <span>
-                <img src="icon-mail.svg" alt="Ícone e-mail" />
+                <img src="/icon-mail.svg" alt="Ícone e-mail" />
                 contato@pacto.com.br
               </span>
             </li>
             <li>
               <span>
-                <img src="icon-phone.svg" alt="Ícone telefone" />
+                <img src="/icon-phone.svg" alt="Ícone telefone" />
                 22 9999-9999
               </span>
             </li>
             <li className={styles.social}>
               <a href="#">
-                <img src="icon-face.svg" alt="Ícone Facebook" />
+                <img src="/icon-face.svg" alt="Ícone Facebook" />
               </a>
               <a href="#">
-                <img src="icon-insta.svg" alt="Ícone Instagram" />
+                <img src="/icon-insta.svg" alt="Ícone Instagram" />
               </a>
             </li>
           </ul>
@@ -61,7 +61,7 @@ function Footer() {
             rel="noopener noreferrer"
           >
             Desenvolvimento
-            <img src="oasis.svg" alt="Desenvolvimento Agência Oásis" />
+            <img src="/oasis.svg" alt="Desenvolvimento Agência Oásis" />
           </a>
         </div>
       </div>

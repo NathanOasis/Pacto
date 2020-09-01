@@ -12,7 +12,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <a href="/">
-          <img className={styles.logo} src="logo.svg" alt="Logo Pacto" />
+          <img className={styles.logo} src="/logo.svg" alt="Logo Pacto" />
         </a>
         <div
           className={`${styles.menu} ${menuBurger && styles.menuActive}`}
