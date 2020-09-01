@@ -1,0 +1,113 @@
+@import "variables";
+
+.main {
+  padding: 90px 20px 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin-top: 40px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      label {
+        color: $text-color;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .description {
+    color: $text-color;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    margin-top: 20px;
+  }
+
+  .text {
+    color: $text-color;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  .radioGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    li {
+      width: auto;
+
+      &:first-child {
+        margin-right: 60px;
+      }
+    }
+  }
+
+  .buttonAction {
+    color: $second-color;
+    font-size: 18px;
+    width: 300px;
+    margin: 30px auto 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+      border: 1px solid $second-color;
+      background: transparent;
+      margin-top: 5px;
+      color: $text-color;
+      font-size: 15px;
+
+      &::placeholder {
+        color: #c8c6c6;
+        font-style: italic;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      height: 40px;
+      padding: 0 10px;
+    }
+
+    textarea {
+      height: 120px;
+      padding: 15px 10px;
+    }
+
+    input[type="submit"] {
+      width: 40%;
+      margin: 0 auto;
+      border-radius: 20px;
+      margin-top: 20px;
+      color: $second-color;
+    }
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    & + .formGroup {
+      margin-top: 60px;
+    }
+  }
+}
