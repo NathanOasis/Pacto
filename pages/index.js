@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 import styles from "../styles/Home.module.scss";
 
@@ -24,8 +23,6 @@ export default function Home() {
         <div className={styles.bannerTop}>
           <Banner />
         </div>
-
-        <Link href="/cadastro-acoes">Ações</Link>
 
         <BoxText
           className={styles.boxTextTop}

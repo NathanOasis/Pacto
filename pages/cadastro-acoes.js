@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "../styles/Actions.module.scss";
 
 import NextHead from "../components/NextHead";
