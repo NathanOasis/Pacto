@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import OurReferees from "../components/OurReferees";
 import Title from "../components/Title";
 import Notices from "../components/Notices";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -85,6 +86,8 @@ export default function Home() {
           reprehenderit in voluptate velit esse cillum dolore eu"
           />
         </div>
+
+        <Footer />
       </main>
     </>
   );
