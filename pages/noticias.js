@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import styles from "../styles/Notices.module.scss";
 
@@ -20,38 +21,44 @@ export default function Actions() {
           <Title title="Notícias" />
         </div>
 
-        <div className={styles.box}>
-          <img src="notice.jpg" alt="Imagem da notícia" />
-          <span className={styles.date}>12 Jun</span>
-          <span className={styles.title}>Título da Notícia</span>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-        </div>
+        <Link href={`/noticia/1`}>
+          <div className={styles.box}>
+            <img src="notice.jpg" alt="Imagem da notícia" />
+            <span className={styles.date}>12 Jun</span>
+            <span className={styles.title}>Título da Notícia</span>
+            <p className={styles.description}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </div>
+        </Link>
 
-        <div className={styles.box}>
-          <img src="notice.jpg" alt="Imagem da notícia" />
-          <span className={styles.date}>12 Jun</span>
-          <span className={styles.title}>Título da Notícia</span>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-        </div>
+        <Link href="/">
+          <div className={styles.box}>
+            <img src="notice.jpg" alt="Imagem da notícia" />
+            <span className={styles.date}>12 Jun</span>
+            <span className={styles.title}>Título da Notícia</span>
+            <p className={styles.description}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </div>
+        </Link>
 
-        <div className={styles.box}>
-          <img src="notice.jpg" alt="Imagem da notícia" />
-          <span className={styles.date}>12 Jun</span>
-          <span className={styles.title}>Título da Notícia</span>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-        </div>
+        <Link href="/">
+          <div className={styles.box}>
+            <img src="notice.jpg" alt="Imagem da notícia" />
+            <span className={styles.date}>12 Jun</span>
+            <span className={styles.title}>Título da Notícia</span>
+            <p className={styles.description}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </div>
+        </Link>
       </main>
 
       <Footer />
