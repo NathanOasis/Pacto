@@ -104,7 +104,8 @@
 
   .menuMobile {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 50px);
+    padding: 140px 0;
     background: #4b1f2b;
     position: fixed;
     visibility: hidden;
