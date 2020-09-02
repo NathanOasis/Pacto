@@ -35,22 +35,64 @@ export default function About() {
         </div>
 
         <p className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Sed ut
-          perspiciatis unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-          inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-          quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-          eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem.
+          A 1ª Primeira Câmara Privada de Mediação, Conciliação e Arbitragem
+          daRegião dos Lagos do Estado do Rio de Janeiro – Pacto Lagos, surgiu
+          danecessidade de oferecer um serviço que solucione as lides de forma
+          rápida eeficiente considerando a complexidade que envolve o trâmite de
+          processosjudiciais, fazendo necessário mudar a visão e buscar a
+          desjudicialização dosconflitos
+        </p>
+
+        <p className={styles.description}>
+          A Pacto Lagos é uma empresa privada constituída para
+          oferecermecanismos extrajudiciais de soluções de conflitos envolvendo
+          pessoas(físicas e jurídicas), bem como prestar atendimento e
+          orientação que possamcontribuir na resolução de conflitos,
+          incentivando o consenso entre as partes,atuando seus objetivos sociais
+          com segurança, sigilo e responsabilidade dosagentes.
+        </p>
+
+        <p className={styles.description}>
+          Todos os árbitros que compõem a equipe da Pacto Lagos assinam umTermo
+          de Imparcialidade para cada conflito os quais sejam
+          nomeados,garantindo um procedimento arbitral justo à ambas as partes.
+        </p>
+
+        <p className={styles.description}>
+          Não se pode falar em pacificação de conflitos em que o equilíbrio das
+          partesnão seja adequadamente dimensionado. A Pacto Lagos tem
+          compromissocom as garantias constitucionais das partes. A razão de ser
+          da Pacto Lagos é oferecer mais um canal de superação de conflitos,
+          colaborando parao progresso harmônico das relações entre pessoas.
+        </p>
+
+        <p className={styles.description}>
+          <strong>Visão</strong>
+          Ser referência em qualidade, agilidade e inovação na condução de
+          processoscom diálogos e consensuais de gestão de controvérsias,
+          contribuindo para umraciocínio construtivo que leve à mudança de
+          paradigmas de nossa sociedadee que promova seu desenvolvimento,
+          fortalecendo os laços afetivos e sociais.
+        </p>
+
+        <p className={styles.description}>
+          <strong>Valores</strong>
+          Nossos alicerces são a qualidade, responsabilidade,
+          comprometimento,imparcialidade, ética, transparência, diálogo e
+          presteza para a resolução dosconflitos de forma satisfatória para as
+          partes.
+        </p>
+
+        <p className={styles.description}>
+          <strong>Missão</strong>
+          Promover a resolução extrajudicial de conflitos com agilidade e
+          segurança,atuando na condução de diálogos, de processos decisórios e
+          de métodosconsensuais com expertise técnica, ética e empenho.Atendemos
+          pessoas físicas e jurídicas, bem como organizações de
+          qualquernatureza, no âmbito privado, público e social.A melhoria das
+          relações pessoais e empresariais, via intermediações isentas,céleres,
+          de baixo custo, com qualidade e efetiva segurança jurídica é o
+          nossomaior objetivo.
         </p>
 
         <Title title="Nosso Árbitros" />

@@ -19,6 +19,8 @@
   }
 
   .box {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
     img {
       width: 100%;
       max-width: 100%;
@@ -36,7 +38,7 @@
     }
 
     .title {
-      font-size: 20px;
+      font-size: 16px;
       color: $title-color;
       margin-top: 15px;
       display: block;

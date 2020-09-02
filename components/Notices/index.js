@@ -19,37 +19,37 @@ function Notices() {
       <div className={styles.box}>
         <img src="notice-image.png" alt="Notícia" />
         <span>
-          <strong>12 Jun | </strong>Título da notícia
+          Título da notícia
+          <strong>12 Jun </strong>
         </span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor...
         </p>
-        <a href="#">Matéria completa</a>
       </div>
 
       <div className={styles.box}>
         <img src="notice-image.png" alt="Notícia" />
         <span>
-          <strong>12 Jun | </strong>Título da notícia
+          Título da notícia
+          <strong>12 Jun </strong>
         </span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor...
         </p>
-        <a href="#">Matéria completa</a>
       </div>
 
       <div className={styles.box}>
         <img src="notice-image.png" alt="Notícia" />
         <span>
-          <strong>12 Jun | </strong>Título da notícia
+          Título da notícia
+          <strong>12 Jun </strong>
         </span>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor...
         </p>
-        <a href="#">Matéria completa</a>
       </div>
     </Slider>
   );

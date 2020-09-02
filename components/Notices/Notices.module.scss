@@ -6,14 +6,16 @@
 
   span {
     color: #a61b25;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 15px;
-    display: flex;
+    display: block;
     font-style: italic;
 
     strong {
       font-weight: bold;
       text-transform: uppercase;
+      display: block;
+      margin-top: 5px;
     }
   }
 
@@ -21,7 +23,7 @@
     color: #5a5a5a;
     margin-top: 15px;
     display: block;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   a {

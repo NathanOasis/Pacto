@@ -24,6 +24,13 @@
     color: $text-color;
     font-size: 14px;
     line-height: 16px;
+
+    strong {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
   }
 
   .list {
@@ -41,7 +48,7 @@
       }
 
       span {
-        font-size: 14px;
+        font-size: 16px;
         color: $title-color;
         font-style: italic;
         display: block;

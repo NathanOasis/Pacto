@@ -43,11 +43,7 @@ export default function Home() {
             </svg>
           }
           title="Quem Somos"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu"
+          description="A   Pacto Lagos   é   uma   empresa   privada   constituída   para   oferecermecanismos   extrajudiciais   de   soluções   de   conflitos   envolvendo   pessoas(físicas e jurídicas), bem como prestar atendimento e orientação que possamcontribuir na resolução de conflitos, incentivando o consenso entre as partes,atuando seus objetivos sociais com segurança, sigilo e responsabilidade dosagentes."
         />
 
         <div className={styles.containerReferees}>
