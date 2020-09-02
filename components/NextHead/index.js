@@ -5,6 +5,7 @@ function NextHead({ title }) {
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <title>{title}</title>
+      <meta name="Description" content="Site Pacto"></meta>
     </Head>
   );
 }

@@ -31,6 +31,11 @@
       padding-top: 115px;
       font-size: 15px;
       padding-left: 20px;
+
+      @include desktop {
+        width: 70%;
+        margin: 0 auto;
+      }
     }
 
     .title {
@@ -41,6 +46,11 @@
       padding-bottom: 20px;
       padding-left: 20px;
       font-style: italic;
+
+      @include desktop {
+        width: 70%;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -51,6 +61,12 @@
     margin-top: 30px;
     padding: 0 20px;
     line-height: 18px;
+
+    @include desktop {
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
   }
 
   .textSugestion {
@@ -58,6 +74,13 @@
     justify-content: initial;
     padding-left: 20px;
     position: relative;
+
+    @include desktop {
+      width: 70%;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-top: 60px;
+    }
 
     &:after {
       content: "";
@@ -70,8 +93,31 @@
     }
   }
 
+  .wrapper {
+    @include desktop {
+      width: 70%;
+      margin: 0 auto;
+      padding: 20px 0 0;
+    }
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
   .box {
     padding: 0 20px;
+
+    @include desktop {
+      width: 70%;
+      margin: 0 auto;
+      padding: 20px 0 0;
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+
     img {
       width: 100%;
       max-width: 100%;

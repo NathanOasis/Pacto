@@ -42,11 +42,11 @@ export default function Actions() {
               </label>
             </li>
 
-            <p className={styles.text}>
-              Há Cláusula Compromissória elegendo a 8ª Câmara?
-            </p>
+            <li className={styles.text}>
+              <p>Há Cláusula Compromissória elegendo a 8ª Câmara?</p>
+            </li>
 
-            <div className={styles.radioGroup}>
+            <ul className={styles.radioGroup}>
               <li>
                 <input type="radio" id="clausulaYes" name="radioAction" />
                 <label htmlFor="clausulaYes">Sim</label>
@@ -56,34 +56,76 @@ export default function Actions() {
                 <input type="radio" id="clausulaNo" name="radioAction" />
                 <label htmlFor="clausulaNo">Não</label>
               </li>
-            </div>
+            </ul>
           </ul>
 
-          <div className={styles.formGroup}>
-            <input type="text" placeholder="Nome do requerente / autor" />
-            <input type="number" placeholder="CNPJ/CPF" />
+          <div className={`${styles.formGroup} ${styles.formFlex}`}>
+            <label>
+              Nome do requerente / autor
+              <input type="text" placeholder="Nome do requerente / autor" />
+            </label>
+            <label>
+              CNPJ/CPF
+              <input type="number" placeholder="CNPJ/CPF" />
+            </label>
           </div>
 
-          <div className={styles.formGroup}>
-            <input
-              type="text"
-              placeholder="Nome completo do Responsável legal"
-            />
-            <input type="number" placeholder="CPF do responsável legal" />
-            <input type="text" placeholder="CEP" />
-            <input type="text" placeholder="Endereço" />
-            <input type="text" placeholder="Bairro" />
-            <input type="text" placeholder="Cidade" />
-            <input type="text" placeholder="Estado" />
-            <input type="text" placeholder="Telefone fixo com DDD" />
-            <input type="text" placeholder="Telefone celular com DDD" />
-            <input type="email" placeholder="E-mail" />
-            <input type="text" placeholder="Skype" />
-            <textarea
-              name="resum"
-              id="resum"
-              placeholder="Resumo do litígio com datas, e o que requer"
-            ></textarea>
+          <div className={`${styles.formGroup} ${styles.formColumn}`}>
+            <label>
+              Nome completo do Responsável legal
+              <input
+                type="text"
+                placeholder="Nome completo do Responsável legal"
+              />
+            </label>
+            <label>
+              CPF do responsável legal
+              <input type="number" placeholder="CPF do responsável legal" />
+            </label>
+            <label>
+              CEP
+              <input type="text" placeholder="CEP" />
+            </label>
+            <label>
+              Endereço
+              <input type="text" placeholder="Endereço" />
+            </label>
+            <label>
+              Bairro
+              <input type="text" placeholder="Bairro" />
+            </label>
+            <label>
+              Cidade
+              <input type="text" placeholder="Cidade" />
+            </label>
+            <label>
+              Estado
+              <input type="text" placeholder="Estado" />
+            </label>
+            <label>
+              Telefone fixo com DDD
+              <input type="text" placeholder="Telefone fixo com DDD" />
+            </label>
+            <label>
+              Telefone celular com DDD
+              <input type="text" placeholder="Telefone celular com DDD" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="E-mail" />
+            </label>
+            <label>
+              Skype
+              <input type="text" placeholder="Skype" />
+            </label>
+            <label>
+              Resumo do litígio com datas, e o que requer
+              <textarea
+                name="resum"
+                id="resum"
+                placeholder="Resumo do litígio com datas, e o que requer"
+              ></textarea>
+            </label>
           </div>
 
           <Button text="Prosseguir" className={styles.buttonAction} />

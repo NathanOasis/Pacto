@@ -48,6 +48,10 @@
         height: 4px;
         width: 300px;
         bottom: -30px;
+
+        @include desktop {
+          width: 104%;
+        }
       }
     }
 

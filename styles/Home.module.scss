@@ -14,8 +14,134 @@
     }
   }
 
+  .wrapperBox {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      padding: 0 50px;
+
+      .boxTextTop,
+      .containerReferees {
+        display: block;
+      }
+
+      .boxTextTop {
+        width: 35%;
+        margin-top: -35px;
+        position: relative;
+        padding: 0;
+
+        &:before {
+          content: "";
+          position: absolute;
+          right: -33px;
+          top: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 33px 0 0 33px;
+          border-color: transparent transparent transparent #332325;
+        }
+
+        .title:after {
+          width: 130%;
+          height: 3px;
+          background: rgba(226, 226, 226, 0.32);
+        }
+      }
+
+      .containerReferees {
+        padding-left: 40px;
+        margin-top: 0;
+
+        .wrapper {
+          display: flex;
+        }
+
+        .title {
+          justify-content: initial;
+          padding-left: 10px;
+          border-bottom: 2px solid #e2e2e2ed;
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    @include desktop-big {
+      .boxTextTop {
+        padding: 0 50px;
+      }
+    }
+  }
+
+  .wrapperNoticesBox {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      padding: 0 50px;
+      margin-top: 60px;
+
+      .containerNotices,
+      .boxTextBot {
+        display: block;
+      }
+
+      .containerNotices {
+        padding-right: 40px;
+        margin-top: 0;
+        width: 65%;
+        .wrapperTitle {
+          justify-content: initial;
+          border-bottom: 2px solid #e2e2e2;
+          padding-bottom: 20px;
+        }
+
+        .wrapperNotices {
+          margin-top: 30px;
+          display: flex;
+        }
+      }
+
+      .boxTextBot {
+        width: 35%;
+        position: relative;
+        padding: 0;
+        margin-top: 11px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: -40px;
+          top: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 40px 40px 0px 0px;
+          border-color: transparent #332325 transparent transparent;
+        }
+
+        .title {
+          display: none;
+        }
+      }
+    }
+
+    @include desktop-big {
+      .boxTextBot {
+        padding: 0 50px;
+      }
+    }
+  }
+
   .boxTextTop {
     margin-top: -20px;
+
+    @include desktop {
+      display: none;
+    }
   }
 
   .containerReferees {
@@ -29,12 +155,18 @@
       width: 300px;
       margin: 30px auto 0;
     }
+
+    @include desktop {
+      display: none;
+    }
   }
 
   .containerActions {
     @include container;
     margin-top: 60px;
     background: url("../public/bg-form-home.png");
+    background-repeat: no-repeat;
+    background-position: center center;
 
     ul {
       display: flex;
@@ -48,6 +180,10 @@
         align-items: center;
         text-align: center;
 
+        @include desktop {
+          width: 25%;
+        }
+
         label {
           color: $text-color;
           margin-top: 10px;
@@ -60,11 +196,19 @@
       font-size: 18px;
       width: 300px;
       margin: 30px auto 0;
+
+      @include desktop {
+        margin: 50px auto 0;
+      }
     }
   }
 
   .containerNotices {
     margin-top: 60px;
+
+    @include desktop {
+      display: none;
+    }
 
     .wrapperTitle {
       display: flex;
@@ -95,5 +239,9 @@
 
   .boxTextBot {
     margin-top: 60px;
+
+    @include desktop {
+      display: none;
+    }
   }
 }

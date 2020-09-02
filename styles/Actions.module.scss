@@ -15,6 +15,10 @@
       align-items: center;
       text-align: center;
 
+      @include desktop {
+        width: 25%;
+      }
+
       label {
         color: $text-color;
         margin-top: 10px;
@@ -31,11 +35,18 @@
   }
 
   .text {
-    color: $text-color;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 60px;
     width: 100%;
+    p {
+      color: $text-color;
+      text-align: center;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    @include desktop {
+      border-top: 2px solid #ededed;
+      padding-top: 40px;
+    }
   }
 
   .radioGroup {
@@ -63,6 +74,11 @@
   form {
     display: flex;
     flex-direction: column;
+
+    @include desktop {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
     input[type="text"],
     input[type="email"],
@@ -106,8 +122,55 @@
     flex-direction: column;
     margin-top: 20px;
 
+    label {
+      font-size: 0;
+      width: 100%;
+
+      input,
+      textarea {
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      margin: 0 auto;
+      width: 60%;
+    }
+
     & + .formGroup {
       margin-top: 60px;
+    }
+  }
+
+  .formFlex {
+    @include desktop {
+      flex-direction: row;
+
+      label {
+        width: 48%;
+
+        &:first-child {
+          margin-right: 2%;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .formColumn {
+    @include desktop {
+      margin: 0 auto;
+      width: 60%;
+      align-items: center;
+      justify-content: center;
+
+      input,
+      textarea {
+        width: 100%;
+      }
     }
   }
 }

@@ -3,6 +3,14 @@
 .main {
   padding: 90px 20px 0;
 
+  @include tablet {
+    padding: 90px 50px 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   .wrapperTitle {
     display: flex;
     align-items: center;
@@ -21,10 +29,28 @@
   .box {
     border-bottom: 1px solid #ccc;
     padding-bottom: 30px;
+
+    @include tablet {
+      display: flex;
+      max-width: 900px;
+      align-items: center;
+      border-bottom: none;
+    }
+
+    .wrapper {
+      @include tablet {
+        margin-left: 20px;
+      }
+    }
+
     img {
       width: 100%;
       max-width: 100%;
       margin-top: 30px;
+
+      @include tablet {
+        max-width: 200px;
+      }
     }
 
     .date {

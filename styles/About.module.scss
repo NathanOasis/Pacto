@@ -3,6 +3,10 @@
 .main {
   padding: 90px 20px 0;
 
+  @include desktop {
+    padding: 90px 50px 0;
+  }
+
   .wrapperTitle {
     display: flex;
     align-items: center;
@@ -31,6 +35,20 @@
       margin-bottom: 20px;
       text-transform: uppercase;
     }
+
+    @include desktop {
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 15px;
+    }
+  }
+
+  .last {
+    @include desktop {
+      border-bottom: 2px solid #eeeeee;
+      padding-bottom: 30px;
+      margin-bottom: 60px;
+    }
   }
 
   .list {
@@ -41,6 +59,10 @@
       margin-top: 30px;
       width: 50%;
       padding: 0 13px;
+
+      @include desktop {
+        width: 33%;
+      }
 
       img {
         width: 100%;

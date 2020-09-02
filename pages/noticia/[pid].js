@@ -57,18 +57,46 @@ function Notice() {
 
         <Title title="Confira também" className={styles.textSugestion} />
 
-        <Link href="/">
-          <div className={styles.box}>
-            <img src="/notice.jpg" alt="Imagem da notícia" />
-            <span className={styles.date}>12 Jun</span>
-            <span className={styles.title}>Título da Notícia</span>
-            <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-          </div>
-        </Link>
+        <div className={styles.wrapper}>
+          <Link href="/">
+            <div className={styles.box}>
+              <img src="/notice.jpg" alt="Imagem da notícia" />
+              <span className={styles.date}>12 Jun</span>
+              <span className={styles.title}>Título da Notícia</span>
+              <p className={styles.description}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam.
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/">
+            <div className={styles.box}>
+              <img src="/notice.jpg" alt="Imagem da notícia" />
+              <span className={styles.date}>12 Jun</span>
+              <span className={styles.title}>Título da Notícia</span>
+              <p className={styles.description}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam.
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/">
+            <div className={styles.box}>
+              <img src="/notice.jpg" alt="Imagem da notícia" />
+              <span className={styles.date}>12 Jun</span>
+              <span className={styles.title}>Título da Notícia</span>
+              <p className={styles.description}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam.
+              </p>
+            </div>
+          </Link>
+        </div>
       </main>
 
       <Footer />

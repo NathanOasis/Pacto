@@ -1,8 +1,12 @@
+// Colos
+
 $primary-color: #543d3f;
 $second-color: #ff7556;
 $white-color: #fff;
 $text-color: #5a5a5a;
 $title-color: #a61b25;
+
+// Mixin Flex
 
 @mixin flex-center {
   display: flex;
@@ -20,4 +24,32 @@ $title-color: #a61b25;
   width: 90%;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+// Mixin media query
+
+@mixin phone {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet-land {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin desktop-big {
+  @media (min-width: 1800px) {
+    @content;
+  }
 }

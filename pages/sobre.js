@@ -83,7 +83,7 @@ export default function About() {
           partes.
         </p>
 
-        <p className={styles.description}>
+        <p className={`${styles.description} ${styles.last}`}>
           <strong>Missão</strong>
           Promover a resolução extrajudicial de conflitos com agilidade e
           segurança,atuando na condução de diálogos, de processos decisórios e

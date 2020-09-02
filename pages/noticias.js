@@ -22,42 +22,54 @@ export default function Notices() {
         </div>
 
         <Link href={`/noticia/1`}>
-          <div className={styles.box}>
-            <img src="notice.jpg" alt="Imagem da notícia" />
-            <span className={styles.date}>12 Jun</span>
-            <span className={styles.title}>Título da Notícia</span>
-            <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-          </div>
+          <a>
+            <div className={styles.box}>
+              <img src="notice.jpg" alt="Imagem da notícia" />
+              <div className={styles.wrapper}>
+                <span className={styles.date}>12 Jun</span>
+                <span className={styles.title}>Título da Notícia</span>
+                <p className={styles.description}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam.
+                </p>
+              </div>
+            </div>
+          </a>
         </Link>
 
-        <Link href="/">
-          <div className={styles.box}>
-            <img src="notice.jpg" alt="Imagem da notícia" />
-            <span className={styles.date}>12 Jun</span>
-            <span className={styles.title}>Título da Notícia</span>
-            <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-          </div>
+        <Link href={`/noticia/1`}>
+          <a>
+            <div className={styles.box}>
+              <img src="notice.jpg" alt="Imagem da notícia" />
+              <div className={styles.wrapper}>
+                <span className={styles.date}>12 Jun</span>
+                <span className={styles.title}>Título da Notícia</span>
+                <p className={styles.description}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam.
+                </p>
+              </div>
+            </div>
+          </a>
         </Link>
 
-        <Link href="/">
-          <div className={styles.box}>
-            <img src="notice.jpg" alt="Imagem da notícia" />
-            <span className={styles.date}>12 Jun</span>
-            <span className={styles.title}>Título da Notícia</span>
-            <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
-            </p>
-          </div>
+        <Link href={`/noticia/1`}>
+          <a>
+            <div className={styles.box}>
+              <img src="notice.jpg" alt="Imagem da notícia" />
+              <div className={styles.wrapper}>
+                <span className={styles.date}>12 Jun</span>
+                <span className={styles.title}>Título da Notícia</span>
+                <p className={styles.description}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam.
+                </p>
+              </div>
+            </div>
+          </a>
         </Link>
       </main>
 
