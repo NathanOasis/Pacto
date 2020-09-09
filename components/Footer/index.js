@@ -75,7 +75,6 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Desenvolvimento
           <img src="/oasis.svg" alt="Desenvolvimento Agência Oásis" />
         </a>
       </div>

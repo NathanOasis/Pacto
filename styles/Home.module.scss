@@ -19,7 +19,7 @@
 
     @include desktop {
       display: flex;
-      padding: 0 50px;
+      padding: 0 70px;
 
       .boxTextTop,
       .containerReferees {
@@ -81,7 +81,7 @@
 
     @include desktop {
       display: flex;
-      padding: 0 50px;
+      padding: 0 70px;
       margin-top: 60px;
 
       .containerNotices,
@@ -162,15 +162,41 @@
   }
 
   .containerActions {
-    @include container;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 90%;
     margin-top: 60px;
     background: url("../public/bg-form-home.png");
     background-repeat: no-repeat;
     background-position: center center;
+    border-top: 3px solid rgba(226, 226, 226, 0.5);
+
+    @include desktop {
+      width: 100%;
+    }
+
+    .title {
+      @include desktop {
+        margin-top: 60px;
+        font-size: 30px;
+      }
+    }
+
+    & > p {
+      color: $text-color;
+      font-size: 13px;
+      text-align: center;
+      padding-top: 20px;
+    }
 
     ul {
       display: flex;
       flex-wrap: wrap;
+
+      @include desktop {
+        width: 65%;
+        margin: 0 auto;
+      }
 
       li {
         margin-top: 40px;

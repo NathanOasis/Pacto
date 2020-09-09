@@ -40,27 +40,18 @@
       margin-top: 15px;
       position: relative;
       text-align: center;
-
-      &:after {
-        content: "";
-        position: absolute;
-        background: #e2e2e2;
-        height: 4px;
-        width: 300px;
-        bottom: -30px;
-
-        @include desktop {
-          width: 104%;
-        }
-      }
     }
 
     .description {
       color: $white-color;
       font-style: initial;
       display: block;
-      margin-top: 60px;
+      margin-top: 35px;
       font-size: 14px;
+      line-height: 16px;
+
+      border-top: 3px solid rgba(226, 226, 226, 0.5);
+      padding-top: 20px;
     }
 
     .button {

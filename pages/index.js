@@ -86,7 +86,8 @@ export default function Home() {
         </div>
 
         <div className={styles.containerActions}>
-          <Title title="Cadastro de Ações" />
+          <Title title="Cadastro de Ações" className={styles.title} />
+          <p>Selecone o método de solução de litígios desejado</p>
           <ul>
             <li>
               <input type="radio" id="mediacao" name="radioAction" />
