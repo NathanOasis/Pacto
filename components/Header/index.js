@@ -47,7 +47,7 @@ function Header() {
                     router.pathname == "/cadastro-acoes" ? styles.active : ""
                   }`}
                 >
-                  Cadastro de alções
+                  Cadastro de ações
                 </a>
               </Link>
             </li>
@@ -71,11 +71,6 @@ function Header() {
                 >
                   Notícias
                 </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="#contato">
-                <a href="#contato">Fale conosco</a>
               </Link>
             </li>
           </ul>
@@ -115,7 +110,7 @@ function Header() {
           </li>
           <li>
             <Link href="/cadastro-acoes">
-              <a>Cadastro de alções</a>
+              <a>Cadastro de ações</a>
             </Link>
           </li>
         </ul>
