@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../services/api";
 import Link from "next/link";
+import { format } from "date-fns";
 
 import styles from "../styles/Notices.module.scss";
 
@@ -9,6 +11,14 @@ import Title from "../components/Title";
 import Footer from "../components/Footer";
 
 export default function Notices() {
+  const [notices, setNotices] = useState([]);
+
+  useEffect(() => {
+    api.get("listNews").then((response) => {
+      setNotices(response.data);
+    });
+  }, []);
+
   return (
     <>
       <NextHead title="Notícias - Pacto" />
@@ -21,56 +31,25 @@ export default function Notices() {
           <Title title="Notícias" />
         </div>
 
-        <Link href={`/noticia/1`}>
-          <a>
-            <div className={styles.box}>
-              <img src="notice.jpg" alt="Imagem da notícia" />
-              <div className={styles.wrapper}>
-                <span className={styles.date}>12 Jun</span>
-                <span className={styles.title}>Título da Notícia</span>
-                <p className={styles.description}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
-                </p>
+        {notices.map((notice) => (
+          <Link href={`/noticia/1`}>
+            <a>
+              <div className={styles.box}>
+                <img
+                  src={`https://painel.pactolagos.com.br/storage/${notice.main_image}`}
+                  alt={notice.title}
+                />
+                <div className={styles.wrapper}>
+                  <span className={styles.date}>
+                    {format(new Date(notice.created_at), "dd/MM/yyyy")}
+                  </span>
+                  <span className={styles.title}>{notice.title}</span>
+                  <p className={styles.description}>{notice.title}</p>
+                </div>
               </div>
-            </div>
-          </a>
-        </Link>
-
-        <Link href={`/noticia/1`}>
-          <a>
-            <div className={styles.box}>
-              <img src="notice.jpg" alt="Imagem da notícia" />
-              <div className={styles.wrapper}>
-                <span className={styles.date}>12 Jun</span>
-                <span className={styles.title}>Título da Notícia</span>
-                <p className={styles.description}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
-                </p>
-              </div>
-            </div>
-          </a>
-        </Link>
-
-        <Link href={`/noticia/1`}>
-          <a>
-            <div className={styles.box}>
-              <img src="notice.jpg" alt="Imagem da notícia" />
-              <div className={styles.wrapper}>
-                <span className={styles.date}>12 Jun</span>
-                <span className={styles.title}>Título da Notícia</span>
-                <p className={styles.description}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam.
-                </p>
-              </div>
-            </div>
-          </a>
-        </Link>
+            </a>
+          </Link>
+        ))}
       </main>
 
       <Footer />

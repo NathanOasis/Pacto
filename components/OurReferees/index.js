@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import api from "../../services/api";
+
 import styles from "./Referees.module.scss";
 
 import Slider from "react-slick";
@@ -14,34 +17,26 @@ function OurReferees() {
     slidesToScroll: 1.2,
   };
 
+  const [referees, setReferees] = useState([]);
+
+  useEffect(() => {
+    api.get("listReferees").then((response) => {
+      setReferees(response.data);
+    });
+  }, []);
+
   return (
     <Slider {...settings}>
-      <div className={styles.box}>
-        <img src="arbitro1.jpg" alt="Árbitro nome completo" />
-        <span>Nome completo</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor...
-        </p>
-      </div>
-
-      <div className={styles.box}>
-        <img src="arbitro2.jpg" alt="Árbitro nome completo" />
-        <span>Nome completo</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor...
-        </p>
-      </div>
-
-      <div className={styles.box}>
-        <img src="arbitro3.jpg" alt="Árbitro nome completo" />
-        <span>Nome completo</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor...
-        </p>
-      </div>
+      {referees.map((referee) => (
+        <div className={styles.box}>
+          <img
+            src={`https://painel.pactolagos.com.br${referee.image}`}
+            alt={referee.name}
+          />
+          <span>{referee.name}</span>
+          <p>{referee.bio}</p>
+        </div>
+      ))}
     </Slider>
   );
 }

@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import { format } from "date-fns";
+
+import api from "../../services/api";
+
 import styles from "./Notices.module.scss";
 
 import Slider from "react-slick";
@@ -14,43 +19,32 @@ function Notices() {
     slidesToScroll: 1.2,
   };
 
+  const [notices, setNotices] = useState([]);
+
+  useEffect(() => {
+    api.get("listNews").then((response) => {
+      setNotices(response.data);
+    });
+  }, []);
+
   return (
     <Slider {...settings}>
-      <div className={styles.box}>
-        <img src="notice-image.png" alt="Notícia" />
-        <span>
-          Título da notícia
-          <strong>12 Jun </strong>
-        </span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor...
-        </p>
-      </div>
-
-      <div className={styles.box}>
-        <img src="notice-image.png" alt="Notícia" />
-        <span>
-          Título da notícia
-          <strong>12 Jun </strong>
-        </span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor...
-        </p>
-      </div>
-
-      <div className={styles.box}>
-        <img src="notice-image.png" alt="Notícia" />
-        <span>
-          Título da notícia
-          <strong>12 Jun </strong>
-        </span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor...
-        </p>
-      </div>
+      {notices.map((notice) => (
+        <div className={styles.box}>
+          <img
+            src={`https://painel.pactolagos.com.br/storage/${notice.main_image}`}
+            alt={notice.title}
+          />
+          <span>
+            {notice.title}
+            <strong>
+              <strong>
+                {format(new Date(notice.created_at), "dd/MM/yyyy")}
+              </strong>{" "}
+            </strong>
+          </span>
+        </div>
+      ))}
     </Slider>
   );
 }

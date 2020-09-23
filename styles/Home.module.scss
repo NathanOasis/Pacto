@@ -154,6 +154,15 @@
       font-size: 18px;
       width: 300px;
       margin: 30px auto 0;
+      border: 1px solid #ff7556;
+      border-radius: 50px;
+      height: 35px;
+      font-style: italic;
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     @include desktop {
@@ -260,6 +269,15 @@
       font-size: 18px;
       width: 300px;
       margin: 30px auto 0;
+      border: 1px solid #ff7556;
+      border-radius: 50px;
+      height: 35px;
+      font-style: italic;
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 

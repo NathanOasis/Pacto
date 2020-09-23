@@ -54,11 +54,21 @@
       padding-top: 20px;
     }
 
-    .button {
+    a {
       color: $second-color;
       font-size: 18px;
       width: 80%;
       margin-top: 30px;
+      background: transparent;
+      border: 1px solid #ff7556;
+      border-radius: 50px;
+      height: 35px;
+      font-style: italic;
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

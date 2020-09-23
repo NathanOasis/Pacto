@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+
+import api from "../services/api";
 
 import styles from "../styles/Home.module.scss";
 
@@ -14,18 +17,24 @@ import Notices from "../components/Notices";
 import NoticesDesktop from "../components/NoticesDesktop";
 import Footer from "../components/Footer";
 
-export default function Home() {
+const Home = () => {
+  const [settings, setSettings] = useState([]);
+
+  useEffect(() => {
+    api.get("settings").then((response) => {
+      setSettings(response.data);
+    });
+  }, []);
+
   return (
     <>
       <NextHead title="Home - Pacto" />
-
       <Header />
 
       <main className={styles.main}>
         <div className={styles.bannerTop}>
           <Banner />
         </div>
-
         <div className={styles.wrapperBox}>
           <BoxText
             className={styles.boxTextTop}
@@ -46,18 +55,23 @@ export default function Home() {
               </svg>
             }
             title="Quem Somos"
-            description="A   Pacto Lagos   é   uma   empresa   privada   constituída   para   oferecermecanismos   extrajudiciais   de   soluções   de   conflitos   envolvendo   pessoas(físicas e jurídicas), bem como prestar atendimento e orientação que possamcontribuir na resolução de conflitos, incentivando o consenso entre as partes,atuando seus objetivos sociais com segurança, sigilo e responsabilidade dosagentes. A   Pacto Lagos   é   uma   empresa   privada   constituída   para   oferecermecanismos   extrajudiciais   de   soluções   de   conflitos   envolvendo   pessoas(físicas e jurídicas), bem como prestar atendimento e orientação que possamcontribuir na resolução de conflitos, incentivando o consenso entre as partes,atuando seus objetivos sociais com segurança, sigilo e responsabilidade dosagentes. "
-          />
+            description={settings.summarry_about}
+          >
+            <Link href="/sobre">
+              <a className={styles.button}>Ver mais</a>
+            </Link>
+          </BoxText>
 
           <div className={styles.containerReferees}>
             <Title title="Nossos Árbitros" className={styles.title} />
             <div className={styles.wrapper}>
-              <OurRefereesDesktop />
+              <OurRefereesDesktop numberReferees={3} />
             </div>
-            <Button text="Ver todos" className={styles.buttonReferees} />
+            <Link href="/sobre">
+              <a className={styles.buttonReferees}>Ver todos</a>
+            </Link>
           </div>
         </div>
-
         <BoxText
           className={styles.boxTextTop}
           icon={
@@ -77,14 +91,18 @@ export default function Home() {
             </svg>
           }
           title="Quem Somos"
-          description="A   Pacto Lagos   é   uma   empresa   privada   constituída   para   oferecermecanismos   extrajudiciais   de   soluções   de   conflitos   envolvendo   pessoas(físicas e jurídicas), bem como prestar atendimento e orientação que possamcontribuir na resolução de conflitos, incentivando o consenso entre as partes,atuando seus objetivos sociais com segurança, sigilo e responsabilidade dosagentes."
-        />
-
+          description={settings.summarry_about}
+        >
+          <Link href="/sobre">
+            <a className={styles.button}>Ver mais</a>
+          </Link>
+        </BoxText>
         <div className={styles.containerReferees}>
           <OurReferees />
-          <Button text="Ver todos" className={styles.buttonReferees} />
+          <Link href="/sobre">
+            <a className={styles.buttonReferees}>Ver todos</a>
+          </Link>
         </div>
-
         <div className={styles.containerActions}>
           <Title title="Cadastro de Ações" className={styles.title} />
           <p>Selecone o método de solução de litígios desejado</p>
@@ -110,7 +128,6 @@ export default function Home() {
           </ul>
           <Button text="Prosseguir" className={styles.buttonAction} />
         </div>
-
         <div className={styles.wrapperNoticesBox}>
           <div className={styles.containerNotices}>
             <div className={styles.wrapperTitle}>
@@ -119,23 +136,24 @@ export default function Home() {
             </div>
 
             <div className={styles.wrapperNotices}>
-              <NoticesDesktop />
+              <NoticesDesktop numberNotices={3} />
             </div>
 
-            <Button text="Ver todas" className={styles.buttonNotice} />
+            <Link href="/noticias">
+              <a className={styles.buttonNotice}>Ver todas</a>
+            </Link>
           </div>
 
           <BoxText
             className={styles.boxTextBot}
             title="Legislação sobre Câmara de Arbitragem"
-            description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu"
-          />
+            description={settings.summarry_legislation}
+          >
+            <Link href="/sobre-legislacao">
+              <a>Ver mais</a>
+            </Link>
+          </BoxText>
         </div>
-
         <div className={styles.containerNotices}>
           <div className={styles.wrapperTitle}>
             <img src="notice-icon.svg" alt="Ícone de notícias" />
@@ -146,20 +164,23 @@ export default function Home() {
             <Notices />
           </div>
 
-          <Button text="Ver todas" className={styles.buttonNotice} />
+          <Link href="/noticias">
+            <a className={styles.buttonNotice}>Ver todas</a>
+          </Link>
         </div>
-
         <BoxText
           className={styles.boxTextBot}
           title="Legislação sobre Câmara de Arbitragem"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu"
-        />
+          description={settings.summarry_legislation}
+        >
+          <Link href="/sobre-legislacao">
+            <a>Ver mais</a>
+          </Link>
+        </BoxText>
       </main>
       <Footer />
     </>
   );
-}
+};
+
+export default Home;

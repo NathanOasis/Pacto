@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import api from "../../services/api";
+
 import styles from "./Footer.module.scss";
 
 function Footer() {
+  const [settings, setSettings] = useState([]);
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await api
+      .post("contacts", {
+        name,
+        phone,
+        email,
+        message,
+      })
+      .then(() => console.log("enviado"));
+  }
+
+  useEffect(() => {
+    api.get("settings").then((response) => {
+      setSettings(response.data);
+    });
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
@@ -11,20 +40,20 @@ function Footer() {
             <li>
               <span>
                 <img src="/icon-mail.svg" alt="Ícone e-mail" />
-                contato@pacto.com.br
+                {settings.email_contact}
               </span>
             </li>
             <li>
               <span>
                 <img src="/icon-phone.svg" alt="Ícone telefone" />
-                22 9999-9999
+                {settings.phone}
               </span>
             </li>
             <li className={styles.social}>
-              <a href="#">
+              <a href={settings.facebook}>
                 <img src="/icon-face.svg" alt="Ícone Facebook" />
               </a>
-              <a href="#">
+              <a href={settings.instagram}>
                 <img src="/icon-insta.svg" alt="Ícone Instagram" />
               </a>
             </li>
@@ -36,22 +65,41 @@ function Footer() {
             Selecione o método de solução de litígios desejado{" "}
           </span>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <label>
               Nome
-              <input type="text" placeholder="nome:" />
+              <input
+                type="text"
+                placeholder="nome:"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </label>
             <label>
               Telefone
-              <input type="number" placeholder="telefone:" />
+              <input
+                type="number"
+                placeholder="telefone:"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </label>
             <label>
               Email
-              <input type="email" placeholder="email:" />
+              <input
+                type="email"
+                placeholder="email:"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </label>
             <label>
               Mensagem
-              <textarea placeholder="mensagem:" />
+              <textarea
+                placeholder="mensagem:"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
             </label>
 
             <input type="submit" value="Enviar" />

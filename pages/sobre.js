@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import api from "../services/api";
 
 import styles from "../styles/About.module.scss";
 
@@ -8,6 +10,21 @@ import Title from "../components/Title";
 import Footer from "../components/Footer";
 
 export default function About() {
+  const [settings, setSettings] = useState([]);
+  const [referees, setReferees] = useState([]);
+
+  useEffect(() => {
+    api.get("settings").then((response) => {
+      setSettings(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.get("listReferees").then((response) => {
+      setReferees(response.data);
+    });
+  }, []);
+
   return (
     <>
       <NextHead title="Sobre a Pacto" />
@@ -34,98 +51,21 @@ export default function About() {
           <Title title="Quem Somos" className={styles.title} />
         </div>
 
-        <p className={styles.description}>
-          A 1ª Primeira Câmara Privada de Mediação, Conciliação e Arbitragem
-          daRegião dos Lagos do Estado do Rio de Janeiro – Pacto Lagos, surgiu
-          danecessidade de oferecer um serviço que solucione as lides de forma
-          rápida eeficiente considerando a complexidade que envolve o trâmite de
-          processosjudiciais, fazendo necessário mudar a visão e buscar a
-          desjudicialização dosconflitos
-        </p>
-
-        <p className={styles.description}>
-          A Pacto Lagos é uma empresa privada constituída para
-          oferecermecanismos extrajudiciais de soluções de conflitos envolvendo
-          pessoas(físicas e jurídicas), bem como prestar atendimento e
-          orientação que possamcontribuir na resolução de conflitos,
-          incentivando o consenso entre as partes,atuando seus objetivos sociais
-          com segurança, sigilo e responsabilidade dosagentes.
-        </p>
-
-        <p className={styles.description}>
-          Todos os árbitros que compõem a equipe da Pacto Lagos assinam umTermo
-          de Imparcialidade para cada conflito os quais sejam
-          nomeados,garantindo um procedimento arbitral justo à ambas as partes.
-        </p>
-
-        <p className={styles.description}>
-          Não se pode falar em pacificação de conflitos em que o equilíbrio das
-          partesnão seja adequadamente dimensionado. A Pacto Lagos tem
-          compromissocom as garantias constitucionais das partes. A razão de ser
-          da Pacto Lagos é oferecer mais um canal de superação de conflitos,
-          colaborando parao progresso harmônico das relações entre pessoas.
-        </p>
-
-        <p className={styles.description}>
-          <strong>Visão</strong>
-          Ser referência em qualidade, agilidade e inovação na condução de
-          processoscom diálogos e consensuais de gestão de controvérsias,
-          contribuindo para umraciocínio construtivo que leve à mudança de
-          paradigmas de nossa sociedadee que promova seu desenvolvimento,
-          fortalecendo os laços afetivos e sociais.
-        </p>
-
-        <p className={styles.description}>
-          <strong>Valores</strong>
-          Nossos alicerces são a qualidade, responsabilidade,
-          comprometimento,imparcialidade, ética, transparência, diálogo e
-          presteza para a resolução dosconflitos de forma satisfatória para as
-          partes.
-        </p>
-
-        <p className={`${styles.description} ${styles.last}`}>
-          <strong>Missão</strong>
-          Promover a resolução extrajudicial de conflitos com agilidade e
-          segurança,atuando na condução de diálogos, de processos decisórios e
-          de métodosconsensuais com expertise técnica, ética e empenho.Atendemos
-          pessoas físicas e jurídicas, bem como organizações de
-          qualquernatureza, no âmbito privado, público e social.A melhoria das
-          relações pessoais e empresariais, via intermediações isentas,céleres,
-          de baixo custo, com qualidade e efetiva segurança jurídica é o
-          nossomaior objetivo.
-        </p>
+        <p className={styles.description}>{settings.about_us}</p>
 
         <Title title="Nosso Árbitros" />
 
         <ul className={styles.list}>
-          <li>
-            <img src="/arbitro1.jpg" alt="Árbitro1" />
-            <span>Nome completo</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            </p>
-          </li>
-          <li>
-            <img src="/arbitro2.jpg" alt="Árbitro1" />
-            <span>Nome completo</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            </p>
-          </li>
-          <li>
-            <img src="/arbitro3.jpg" alt="Árbitro1" />
-            <span>Nome completo</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            </p>
-          </li>
-          <li>
-            <img src="/arbitro1.jpg" alt="Árbitro1" />
-            <span>Nome completo</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            </p>
-          </li>
+          {referees.map((referee) => (
+            <li>
+              <img
+                src={`https://painel.pactolagos.com.br${referee.image}`}
+                alt={referee.name}
+              />
+              <span>{referee.name}</span>
+              <p>{referee.bio}</p>
+            </li>
+          ))}
         </ul>
       </main>
 
