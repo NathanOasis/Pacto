@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import api from "../services/api";
 
 import styles from "../styles/Actions.module.scss";
 
@@ -9,6 +11,48 @@ import Button from "../components/Button";
 import Footer from "../components/Footer";
 
 export default function Actions() {
+  const [method, setMethod] = useState("");
+  const [commitment_clause, setCommitmentclause] = useState("");
+  const [name_author, setNameAuthor] = useState("");
+  const [cpf_author, setCpfAuthor] = useState("");
+  const [name, setName] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [zip_code, setZipCode] = useState("");
+  const [address, setAddress] = useState("");
+  const [district, setDistrict] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [phone, setPhone] = useState("");
+  const [cel_phone, setCelPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [skype, setSkype] = useState("");
+  const [description, setDescription] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await api
+      .post("actions", {
+        method,
+        commitment_clause,
+        name_author,
+        cpf_author,
+        name,
+        cpf,
+        zip_code,
+        address,
+        district,
+        city,
+        state,
+        phone,
+        cel_phone,
+        email,
+        skype,
+        description,
+      })
+      .then(() => console.log("enviado"));
+  }
+
   return (
     <>
       <NextHead title="Cadastro de ações - Pacto" />
@@ -21,22 +65,54 @@ export default function Actions() {
           Selecione o método de solução de litígios desejado
         </p>
 
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <ul>
             <li>
-              <input type="radio" id="mediacao" name="radioAction" />
+              <input
+                type="radio"
+                id="mediacao"
+                name="radioActionMethod"
+                value="1"
+                onChange={(e) => {
+                  setMethod(e.target.value);
+                }}
+              />
               <label htmlFor="mediacao">Mediação</label>
             </li>
             <li>
-              <input type="radio" id="conciliacao" name="radioAction" />
+              <input
+                type="radio"
+                id="conciliacao"
+                name="radioActionMethod"
+                value="2"
+                onChange={(e) => {
+                  setMethod(e.target.value);
+                }}
+              />
               <label htmlFor="conciliacao">Conciliação</label>
             </li>
             <li>
-              <input type="radio" id="arbitragem" name="radioAction" />
+              <input
+                type="radio"
+                id="arbitragem"
+                name="radioActionMethod"
+                value="3"
+                onChange={(e) => {
+                  setMethod(e.target.value);
+                }}
+              />
               <label htmlFor="arbitragem">Arbitragem</label>
             </li>
             <li>
-              <input type="radio" id="dontknow" name="radioAction" />
+              <input
+                type="radio"
+                id="dontknow"
+                name="radioActionMethod"
+                value="4"
+                onChange={(e) => {
+                  setMethod(e.target.value);
+                }}
+              />
               <label htmlFor="dontknow">
                 Não sei qual o melhor método para o meu caso
               </label>
@@ -48,12 +124,28 @@ export default function Actions() {
 
             <ul className={styles.radioGroup}>
               <li>
-                <input type="radio" id="clausulaYes" name="radioAction" />
+                <input
+                  type="radio"
+                  id="clausulaYes"
+                  name="radioAction"
+                  value="1"
+                  onChange={(e) => {
+                    setCommitmentclause(e.target.value);
+                  }}
+                />
                 <label htmlFor="clausulaYes">Sim</label>
               </li>
 
               <li>
-                <input type="radio" id="clausulaNo" name="radioAction" />
+                <input
+                  type="radio"
+                  id="clausulaNo"
+                  name="radioAction"
+                  value="2"
+                  onChange={(e) => {
+                    setCommitmentclause(e.target.value);
+                  }}
+                />
                 <label htmlFor="clausulaNo">Não</label>
               </li>
             </ul>
@@ -62,11 +154,21 @@ export default function Actions() {
           <div className={`${styles.formGroup} ${styles.formFlex}`}>
             <label>
               Nome do requerente / autor
-              <input type="text" placeholder="Nome do requerente / autor" />
+              <input
+                type="text"
+                placeholder="Nome do requerente / autor"
+                value={name_author}
+                onChange={(e) => setNameAuthor(e.target.value)}
+              />
             </label>
             <label>
               CNPJ/CPF
-              <input type="number" placeholder="CNPJ/CPF" />
+              <input
+                type="number"
+                placeholder="CNPJ/CPF"
+                value={cpf_author}
+                onChange={(e) => setCpfAuthor(e.target.value)}
+              />
             </label>
           </div>
 
@@ -76,47 +178,99 @@ export default function Actions() {
               <input
                 type="text"
                 placeholder="Nome completo do Responsável legal"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </label>
             <label>
               CPF do responsável legal
-              <input type="number" placeholder="CPF do responsável legal" />
+              <input
+                type="number"
+                placeholder="CPF do responsável legal"
+                value={cpf}
+                onChange={(e) => setCpf(e.target.value)}
+              />
             </label>
             <label>
               CEP
-              <input type="text" placeholder="CEP" />
+              <input
+                type="text"
+                placeholder="CEP"
+                value={zip_code}
+                onChange={(e) => setZipCode(e.target.value)}
+              />
             </label>
             <label>
               Endereço
-              <input type="text" placeholder="Endereço" />
+              <input
+                type="text"
+                placeholder="Endereço"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
             </label>
             <label>
               Bairro
-              <input type="text" placeholder="Bairro" />
+              <input
+                type="text"
+                placeholder="Bairro"
+                value={district}
+                onChange={(e) => setDistrict(e.target.value)}
+              />
             </label>
             <label>
               Cidade
-              <input type="text" placeholder="Cidade" />
+              <input
+                type="text"
+                placeholder="Cidade"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
             </label>
             <label>
               Estado
-              <input type="text" placeholder="Estado" />
+              <input
+                type="text"
+                placeholder="Estado"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+              />
             </label>
             <label>
               Telefone fixo com DDD
-              <input type="text" placeholder="Telefone fixo com DDD" />
+              <input
+                type="text"
+                placeholder="Telefone fixo com DDD"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </label>
             <label>
               Telefone celular com DDD
-              <input type="text" placeholder="Telefone celular com DDD" />
+              <input
+                type="text"
+                placeholder="Telefone celular com DDD"
+                value={cel_phone}
+                onChange={(e) => setCelPhone(e.target.value)}
+              />
             </label>
             <label>
               Email
-              <input type="email" placeholder="E-mail" />
+              <input
+                type="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </label>
             <label>
               Skype
-              <input type="text" placeholder="Skype" />
+              <input
+                type="text"
+                placeholder="Skype"
+                value={skype}
+                onChange={(e) => setSkype(e.target.value)}
+              />
             </label>
             <label>
               Resumo do litígio com datas, e o que requer
@@ -124,11 +278,13 @@ export default function Actions() {
                 name="resum"
                 id="resum"
                 placeholder="Resumo do litígio com datas, e o que requer"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </label>
           </div>
 
-          <Button text="Prosseguir" className={styles.buttonAction} />
+          <input type="submit" value="Prosseguir" />
         </form>
       </main>
 

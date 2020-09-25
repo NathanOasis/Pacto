@@ -32,7 +32,7 @@ export default function Notices() {
         </div>
 
         {notices.map((notice) => (
-          <Link href={`/noticia/1`}>
+          <Link href={`/noticia/${notice.id}`}>
             <a>
               <div className={styles.box}>
                 <img
@@ -44,7 +44,7 @@ export default function Notices() {
                     {format(new Date(notice.created_at), "dd/MM/yyyy")}
                   </span>
                   <span className={styles.title}>{notice.title}</span>
-                  <p className={styles.description}>{notice.title}</p>
+                  <p className={styles.description}>{notice.summary_text}</p>
                 </div>
               </div>
             </a>

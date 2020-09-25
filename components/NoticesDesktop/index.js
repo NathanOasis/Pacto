@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 import { format } from "date-fns";
 
@@ -18,17 +19,23 @@ function Notices({ numberNotices }) {
   return (
     <>
       {notices.slice(0, numberNotices).map((notice) => (
-        <div className={styles.box}>
-          <img
-            src={`https://painel.pactolagos.com.br/storage/${notice.main_image}`}
-            alt={notice.title}
-          />
-          <span>
-            {notice.title}
-            <strong>{format(new Date(notice.created_at), "dd/MM/yyyy")}</strong>
-          </span>
-          <p>{notice.title}</p>
-        </div>
+        <Link href={`/noticia/${notice.id}`}>
+          <a>
+            <div className={styles.box}>
+              <img
+                src={`https://painel.pactolagos.com.br/storage/${notice.main_image}`}
+                alt={notice.title}
+              />
+              <span>
+                {notice.title}
+                <strong>
+                  {format(new Date(notice.created_at), "dd/MM/yyyy")}
+                </strong>
+              </span>
+              <p>{notice.summary_text}</p>
+            </div>
+          </a>
+        </Link>
       ))}
     </>
   );

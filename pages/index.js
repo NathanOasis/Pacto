@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import api from "../services/api";
 
@@ -9,7 +10,6 @@ import NextHead from "../components/NextHead";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import BoxText from "../components/BoxText";
-import Button from "../components/Button";
 import OurReferees from "../components/OurReferees";
 import OurRefereesDesktop from "../components/OurRefereesDesktop";
 import Title from "../components/Title";
@@ -19,12 +19,19 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   const [settings, setSettings] = useState([]);
+  const [radio, setRadio] = useState();
 
   useEffect(() => {
     api.get("settings").then((response) => {
       setSettings(response.data);
     });
   }, []);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    window.location.href = "/cadastro-acoes";
+  }
 
   return (
     <>
@@ -106,27 +113,66 @@ const Home = () => {
         <div className={styles.containerActions}>
           <Title title="Cadastro de Ações" className={styles.title} />
           <p>Selecone o método de solução de litígios desejado</p>
-          <ul>
-            <li>
-              <input type="radio" id="mediacao" name="radioAction" />
-              <label htmlFor="mediacao">Mediação</label>
-            </li>
-            <li>
-              <input type="radio" id="conciliacao" name="radioAction" />
-              <label htmlFor="conciliacao">Conciliação</label>
-            </li>
-            <li>
-              <input type="radio" id="arbitragem" name="radioAction" />
-              <label htmlFor="arbitragem">Arbitragem</label>
-            </li>
-            <li>
-              <input type="radio" id="dontknow" name="radioAction" />
-              <label htmlFor="dontknow">
-                Não sei qual o melhor método para o meu caso
-              </label>
-            </li>
-          </ul>
-          <Button text="Prosseguir" className={styles.buttonAction} />
+          <form onSubmit={handleSubmit}>
+            <ul>
+              <li>
+                <input
+                  type="radio"
+                  id="mediacao"
+                  name="radioAction"
+                  value="Mediação"
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
+                />
+                <label htmlFor="mediacao">Mediação</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="conciliacao"
+                  name="radioAction"
+                  value="Conciliação"
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
+                />
+                <label htmlFor="conciliacao">Conciliação</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="arbitragem"
+                  name="radioAction"
+                  value="Arbitragem"
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
+                />
+                <label htmlFor="arbitragem">Arbitragem</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="dontknow"
+                  name="radioAction"
+                  value="Não"
+                  onChange={(e) => {
+                    setRadio(e.target.value);
+                  }}
+                />
+                <label htmlFor="dontknow">
+                  Não sei qual o melhor método para o meu caso
+                </label>
+              </li>
+            </ul>
+
+            <input
+              type="submit"
+              value="Prosseguir"
+              className={styles.buttonAction}
+            />
+          </form>
         </div>
         <div className={styles.wrapperNoticesBox}>
           <div className={styles.containerNotices}>

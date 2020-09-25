@@ -73,6 +73,17 @@ function Header() {
                 </a>
               </Link>
             </li>
+            <li>
+              <Link href="/tabela">
+                <a
+                  className={`${
+                    router.pathname == "/tabela" ? styles.active : ""
+                  }`}
+                >
+                  Tabela de custos
+                </a>
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -111,6 +122,11 @@ function Header() {
           <li>
             <Link href="/cadastro-acoes">
               <a>Cadastro de ações</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/tabela">
+              <a>Tabela de custos</a>
             </Link>
           </li>
         </ul>
