@@ -80,7 +80,7 @@ function Header() {
                     router.pathname == "/tabela" ? styles.active : ""
                   }`}
                 >
-                  Tabela de custos
+                  Tabela
                 </a>
               </Link>
             </li>
@@ -126,7 +126,7 @@ function Header() {
           </li>
           <li>
             <Link href="/tabela">
-              <a>Tabela de custos</a>
+              <a>Tabela</a>
             </Link>
           </li>
         </ul>

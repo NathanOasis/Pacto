@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 export default function About() {
   return (
     <>
-      <NextHead title="Tabela de custos" />
+      <NextHead title="Tabela" />
 
       <Header />
 
