@@ -72,7 +72,7 @@ export default function Actions() {
                 type="radio"
                 id="mediacao"
                 name="radioActionMethod"
-                value="1"
+                value="Mediação"
                 onChange={(e) => {
                   setMethod(e.target.value);
                 }}
@@ -84,7 +84,7 @@ export default function Actions() {
                 type="radio"
                 id="conciliacao"
                 name="radioActionMethod"
-                value="2"
+                value="Conciliação"
                 onChange={(e) => {
                   setMethod(e.target.value);
                 }}
@@ -96,7 +96,7 @@ export default function Actions() {
                 type="radio"
                 id="arbitragem"
                 name="radioActionMethod"
-                value="3"
+                value="Arbitragem"
                 onChange={(e) => {
                   setMethod(e.target.value);
                 }}
@@ -108,7 +108,7 @@ export default function Actions() {
                 type="radio"
                 id="dontknow"
                 name="radioActionMethod"
-                value="4"
+                value="Não sei o método para o meu caso"
                 onChange={(e) => {
                   setMethod(e.target.value);
                 }}
@@ -128,7 +128,7 @@ export default function Actions() {
                   type="radio"
                   id="clausulaYes"
                   name="radioAction"
-                  value="1"
+                  value="Sim"
                   onChange={(e) => {
                     setCommitmentclause(e.target.value);
                   }}
@@ -141,7 +141,7 @@ export default function Actions() {
                   type="radio"
                   id="clausulaNo"
                   name="radioAction"
-                  value="2"
+                  value="Não"
                   onChange={(e) => {
                     setCommitmentclause(e.target.value);
                   }}

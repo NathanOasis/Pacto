@@ -45,7 +45,7 @@ export default function Notice({ notice }) {
         <Title title="Confira também" className={styles.textSugestion} />
 
         <div className={styles.wrapper}>
-          {notices.slice(0, 3).map((notice) => (
+          {notices.slice(0, 4).map((notice) => (
             <Link href={`/noticia/${notice.id}`}>
               <a>
                 <div className={styles.box}>
