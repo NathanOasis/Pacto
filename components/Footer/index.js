@@ -11,6 +11,7 @@ function Footer() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [notify, setNotify] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,7 +23,17 @@ function Footer() {
         email,
         message,
       })
-      .then(() => console.log("enviado"));
+      .then(() => {
+        setName("");
+        setPhone("");
+        setEmail("");
+        setMessage("");
+        setNotify("Contato enviado com sucesso!");
+
+        setTimeout(() => {
+          setNotify("");
+        }, 2000);
+      });
   }
 
   useEffect(() => {
@@ -104,6 +115,7 @@ function Footer() {
 
             <input type="submit" value="Enviar" />
           </form>
+          <p>{notify}</p>
         </div>
         <div className={styles.column}>
           <span className={styles.title}>Onde estamos</span>

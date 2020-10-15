@@ -27,6 +27,7 @@ export default function Actions() {
   const [email, setEmail] = useState("");
   const [skype, setSkype] = useState("");
   const [description, setDescription] = useState("");
+  const [notify, setNotify] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -50,7 +51,13 @@ export default function Actions() {
         skype,
         description,
       })
-      .then(() => console.log("enviado"));
+      .then(() => {
+        setNotify("Contato enviado com sucesso!");
+
+        setTimeout(() => {
+          setNotify("");
+        }, 2000);
+      });
   }
 
   return (
@@ -285,6 +292,7 @@ export default function Actions() {
           </div>
 
           <input type="submit" value="Prosseguir" />
+          <p className={styles.textNotify}>{notify}</p>
         </form>
       </main>
 
