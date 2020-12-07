@@ -51,11 +51,64 @@ export default function About() {
           <Title title="Quem Somos" className={styles.title} />
         </div>
 
-        <p className={styles.description}>{settings.about_us}</p>
+        {/* <p className={styles.description}>{settings.about_us}</p> */}
+
+        <p className={styles.description}>
+          A 1ª Primeira Câmara Privada de Mediação, Conciliação e Arbitragem da
+          Região dos Lagos do Estado do Rio de Janeiro – PACTOS LAGOS, surgiu da
+          necessidade de oferecer um serviço que solucione as lides de forma
+          rápida e eficiente considerando a complexidade que envolve o trâmite
+          de processos judiciais, fazendo necessário mudar a visão e buscar a
+          desjudicialização dos conflitos. <br />
+          <br />
+          A PACTO LAGOS é uma empresa privada constituída para oferecer
+          mecanismos extrajudiciais de soluções de conflitos envolvendo pessoas
+          (físicas e jurídicas), bem como prestar atendimento e orientação que
+          possam contribuir na resolução de conflitos, incentivando o consenso
+          entre as partes, atuando seus objetivos sociais com segurança, sigilo
+          e responsabilidade dos agentes. <br />
+          <br />
+          Todos os árbitros que compõem a equipe da PACTO LAGOS assinam um Termo
+          de Imparcialidade para cada conflito os quais sejam nomeados,
+          garantindo um procedimento arbitral justo à ambas as partes. <br />
+          <br />
+          Não se pode falar em pacificação de conflitos em que o equilíbrio das
+          partes não seja adequadamente dimensionado. A PACTOS LAGOS tem
+          compromisso com as garantias constitucionais das partes. A razão de
+          ser da PACTOS LAGOS é oferecer mais um canal de superação de
+          conflitos, colaborando para o progresso harmônico das relações entre
+          pessoas. <br />
+          <br />
+          <strong>Visão</strong>
+          <br />
+          Ser referência em qualidade, agilidade e inovação na condução de
+          processos com diálogos e consensuais de gestão de controvérsias,
+          contribuindo para um raciocínio construtivo que leve à mudança de
+          paradigmas de nossa sociedade e que promova seu desenvolvimento,
+          fortalecendo os laços afetivos e sociais. <br />
+          <br />
+          <strong>Valores</strong>
+          <br />
+          Nossos alicerces são a qualidade, responsabilidade, comprometimento,
+          imparcialidade, ética, transparência, diálogo e presteza para a
+          resolução dos conflitos de forma satisfatória para as partes. <br />
+          <br />
+          <strong>Missão</strong>
+          <br />
+          Promover a resolução extrajudicial de conflitos com agilidade e
+          segurança, atuando na condução de diálogos, de processos decisórios e
+          de métodos consensuais com expertise técnica, ética e empenho.
+          Atendemos pessoas físicas e jurídicas, bem como organizações de
+          qualquer natureza, no âmbito privado, público e social. A melhoria das
+          relações pessoais e empresariais, via intermediações isentas, céleres,
+          de baixo custo, com qualidade e efetiva segurança jurídica é o nosso
+          maior objetivo. <br />
+          <br />
+        </p>
 
         <Title title="Nosso Árbitros" />
 
-        <ul className={styles.list}>
+        {/* <ul className={styles.list}>
           {referees.map((referee) => (
             <li>
               <img
@@ -66,6 +119,124 @@ export default function About() {
               <p>{referee.bio}</p>
             </li>
           ))}
+        </ul> */}
+
+        <ul className={styles.list}>
+          <li>
+            <img src="/juliana.jpg" alt="Juliana Aguiar" />
+            <span>Juliana Aguiar</span>
+            <p>
+              Advogada especializada em Processo Civil e Advocacia
+              Extrajudicial, com experiência em assessoria, consultoria e
+              contencioso nas áreas cível, família, consumidor, locação,
+              contratos e legalização de imóveis, sempre buscando a resolução de
+              conflitos através de conciliação e mediação. <br />
+              Iniciou sua vida profissional como bancária no ano de 2000. Sendo
+              gerente de Instituição Financeira atendendo Pessoa Física e
+              Jurídica nos anos de 2005 a 2010. <br />
+              Formada em 2009 pela Universidade Cândido Mendes na cidade de Nova
+              Friburgo/RJ. Iniciou sua carreira como advogada somente no ano de
+              2015, na cidade de Rio das Ostras/RJ. <br />
+              Relatora Membro da Comissão de Ética e Disciplina da 52ª Subseção
+              da Ordem dos Advogados do Brasil de Rio das Ostras/RJ desde 2019.
+              Simpatizante ao Direito Sistêmico que consiste na análise do
+              direito sobre uma ótica baseada nas ordens superiores que regem as
+              relações humanas, no estudo das leis sistêmicas faz com que
+              operador do direito tenha um olhar que vai além do que aparece no
+              processo judicial.
+              <br />
+              Sócia/Árbitra da 1ª CâMARA PRIVADA DE MEDIAÇÃO, CONCILIAÇÃO E
+              ARBITRAGEM DA REGIÃO DOS LAGOS DO ESTADO DO RIO DE JANEIRO
+              LTDA.-ME (PACTO LAGOS).
+            </p>
+          </li>
+          <li>
+            <img src="/eduardo.jpg" alt="Eduardo Brez" />
+            <span>Eduardo Brez</span>
+            <p>
+              Profissional com experiência em assessoria, consultoria e
+              contencioso nas áreas cível, família, consumidor, locação e
+              contratos em geral, sempre buscando a resolução de conflitos
+              através da conciliação.
+              <br />
+              Graduado em Direito no ano 2000 pela Universidade Ibirapuera/SP.
+              Iniciou sua carreira como estagiário no ano de 1996, passando por
+              diversos escritórios até a sua graduação. <br />
+              Atuou como advogado em São Paulo até o ano de 2010. <br />
+              Em 2011 começou a exercer a advocacia na Cidade de Nova
+              Friburgo/RJ.
+              <br />
+              No ano de 2014 iniciou a advocacia na Cidade de Rio das Ostras/RJ
+              e região. <br />
+              Conselheiro da 52ª Subseção da Ordem dos Advogados do Brasil de
+              Rio das Ostras/RJ triênio 2016/2018.
+              <br />
+              Presidente da Comissão de Prerrogativas da 52ª Subseção da Ordem
+              dos Advogados do Brasil de Rio das Ostras/RJ em 2016.
+              <br />
+              Conselheiro da 52ª Subseção da Ordem dos Advogados do Brasil de
+              Rio das Ostras/RJ na atual gestão (2019/2021).
+              <br />
+              Diretor Membro da Comissão de Ética e Disciplina da 52ª Subseção
+              da Ordem dos Advogados do Brasil de Rio das Ostras/RJ desde 2017.
+              <br />
+              Presidente da Comissão de Ética e Disciplina da 52ª Subseção da
+              Ordem dos Advogados do Brasil de Rio das Ostras/RJ desde 2020.{" "}
+              <br />
+              Sócio/Árbitro da 1ª CâMARA PRIVADA DE MEDIAÇÃO, CONCILIAÇÃO E
+              ARBITRAGEM DA REGIÃO DOS LAGOS DO ESTADO DO RIO DE JANEIRO
+              LTDA.-ME (PACTO LAGOS)
+            </p>
+          </li>
+          <li>
+            <img src="/renata.jpg" alt="Renata Rodrigues" />
+            <span>Renata Rodrigues</span>
+            <p>
+              Possui experiência nas áreas Trabalhista, Contratual e
+              Consumerista, nos ramos da consultoria jurídica, na advocacia
+              preventiva, visando sempre a melhor técnica jurídica para que o
+              cliente atue de forma segura, com ênfase na mediação de conflitos,
+              sempre que possível, e na Advocacia Contenciosa.
+              <br />
+              Iniciou sua carreira no ano de 2000, quando foi estagiária em um
+              escritório de advocacia e logo após, ingressou no quadro de
+              estagiários da Subdelegacia do Trabalho de Nova Friburgo, onde
+              teve a oportunidade de atuar junto os procedimentos nos processos
+              de autuação por infrações trabalhistas, ocupando o cargo até o fim
+              da sua graduação acadêmica.
+              <br />
+              Após sua graduação, participou de diversos cursos jurídicos de
+              aprimoramento e de forma a complementar sua atuação profissional
+              concluiu o curso de PNL - Programação Neurolinguística.
+              <br />
+              Atualmente, em razão do novo cenário jurídico que se instaurou
+              diante da calamidade pública pelo COVID-19, sua experiência no
+              ramo trabalhista está se expandindo também à consultoria por
+              videoconferência e relacionada, ainda, às medidas emergenciais
+              trabalhistas que foram instituídas, aperfeiçoando-se por meio de
+              cursos e palestras na área do direito do Trabalho de Exceção e em
+              cursos de atualização no ramo do Direito do Trabalho tradicional.{" "}
+              <br />
+            </p>
+          </li>
+          <li>
+            <img src="/toni.jpg" alt="José Antônio Pereira" />
+            <span>José Antônio Pereira</span>
+            <p>
+              Possui treinamento em Inteligência Emocional no Trabalho, Formação
+              em Coaching Executive Buzines, Leader Training Extreme Survivor –
+              Instituto Tânia Zambon (RS) <br />
+              Experiência no atendimento aos clientes, gestão de processos,
+              gestão de pessoal, atendimento pós-venda, com alto nível de
+              soluções amigáveis de litígios. <br />
+              Atendo às regras, virtudes e necessidades do Código de Defesa do
+              Consumidor, defensor da conciliação através da equidade para uma
+              solução justa em que nenhuma das partes seja prejudicada. <br />
+              Possui experiência no comércio de automóveis desde o ano de 2007,
+              atuando como Consultor de Vendas, Supervisor, Gerente de Qualidade
+              e Vendas e Gerente Geral. <br />
+            </p>
+          </li>
         </ul>
       </main>
 

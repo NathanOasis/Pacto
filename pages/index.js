@@ -193,7 +193,7 @@ const Home = () => {
           <BoxText
             className={styles.boxTextBot}
             title="Legislação sobre Câmara de Arbitragem"
-            description={settings.summarry_legislation}
+            description="A Câmara de Arbitragem funciona como um pequeno juízo, possuindo regulamento próprio, mas está submetida a legislação que regulamenta a arbitragem no Brasil. Confira."
           >
             <Link href="/sobre-legislacao">
               <a>Ver mais</a>
@@ -217,7 +217,7 @@ const Home = () => {
         <BoxText
           className={styles.boxTextBot}
           title="Legislação sobre Câmara de Arbitragem"
-          description={settings.summarry_legislation}
+          description="A Câmara de Arbitragem funciona como um pequeno juízo, possuindo regulamento próprio, mas está submetida a legislação que regulamenta a arbitragem no Brasil. Confira."
         >
           <Link href="/sobre-legislacao">
             <a>Ver mais</a>

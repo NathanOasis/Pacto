@@ -271,6 +271,12 @@
 
     .wrapperNotices {
       margin-top: 40px;
+
+      & > a {
+        @include desktop() {
+          width: 33%;
+        }
+      }
     }
 
     .buttonNotice {

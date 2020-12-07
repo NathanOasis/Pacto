@@ -118,7 +118,7 @@
   }
 
   .map {
-    @include desktop {
+    @media (min-width: 1300px) {
       min-width: 580px;
     }
     iframe {
