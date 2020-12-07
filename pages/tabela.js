@@ -30,6 +30,7 @@ export default function About() {
           <p>
             Homologação de acordos – 6,5% do valor da causa ou mínimo de R$
             700,00 e máximo de R$ 8.500,00
+            <br />
             <strong>OBS: Valores em reais.</strong>
           </p>
 
